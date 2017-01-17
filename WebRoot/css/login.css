@@ -1,0 +1,32 @@
+.login {
+    color: #FFFFFF;
+}
+
+.form {
+    position: relative;
+    left: 200px;
+    top: 0px;
+    width: 320px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 50px 30px 50px 50px;
+    margin-top: 30px;
+}
+
+.login1 {
+    display: block;
+    width: 219px;
+    height: 40px;
+    background: #0ae;
+    border: 1px;
+    border-radius: 4px;
+    font-size: 18px;
+    color: #FFFFFF;
+}
+
+.name1 {
+    display: block;
+    width: 219px;
+    height: 40px;
+    border: 0;
+    font-size: 18px;
+}

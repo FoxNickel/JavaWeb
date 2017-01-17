@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.1//EN"
+"http://struts.apache.org/dtds/struts-2.1.dtd">
+<struts>
+<constant name="struts.devMode" value="true" />
+<package name="carrental" extends="struts-default">
+
+<action name="UserLogin" class="com.hdu.carrental.action.UserAction" method="login">
+<result name="success">/home_after_login.jsp</result>
+<result name="error">/login_error.jsp</result>
+</action>
+
+<action name="UserLogout" class="com.hdu.carrental.action.UserAction" method="logOut">
+<result name="success">/login.jsp</result>
+</action>
+
+<action name="AccountInfo" class="com.hdu.carrental.action.UserAction" method="accountInfo">
+<result name="success">/user_profile.jsp</result>
+</action>
+
+<action name="UserRegister" class="com.hdu.carrental.action.UserAction" method="register">
+<result name="success">/login.jsp</result>
+</action>
+
+<action name="ModifyProfile" class="com.hdu.carrental.action.UserAction" method="modifyProfile">
+<result name="success">/user_profile.jsp</result>
+</action>
+
+<action name="LeaveMessage" class="com.hdu.carrental.action.MessageAction" method="leaveMessage">
+<result name="success">/messages_after_login.jsp</result>
+</action>
+
+<action name="ShowAllMessages" class="com.hdu.carrental.action.MessageAction" method="showAllMessage">
+<result name="success">/messages_after_login.jsp</result>
+<result name="NotLogin">/messages.jsp</result>
+</action>
+
+<action name="CarInfo" class="com.hdu.carrental.action.CarAction" method="carInfo">
+<result name="success">/gallery_after_login.jsp</result>
+<result name="NotLogin">/gallery.jsp</result>
+</action>
+
+<action name="CarDetail" class="com.hdu.carrental.action.CarAction" method="carDetail">
+<result name="success">/car_detail.jsp</result>
+<result name="NotLogin">/login.jsp</result>
+</action>
+
+<action name="ChargeInfo" class="com.hdu.carrental.action.ChargesAction" method="chargeInfo">
+<result name="success">/charge_info.jsp</result>
+</action>
+
+<action name="Rent" class="com.hdu.carrental.action.ChargesAction" method="rent">
+<result name="success">/charge_info.jsp</result>
+</action>
+
+<action name="NewsInfo" class ="com.hdu.carrental.action.NewsAction" method = "NewsInfo">
+<result name="success">/news_after_login.jsp</result>
+<result name="NotLogin">/news.jsp</result>
+</action>
+
+<action name="AdministratorLogin" class="com.hdu.carrental.action.AdministratorAction" method="login">
+<result name="success">/backstage/home.jsp</result>
+<result name="error">/backstage/loginerror.jsp</result>
+</action>
+
+<action name="AdministratorLogOut" class="com.hdu.carrental.action.AdministratorAction" method="logOut">
+<result name="success">/backstage/login.jsp</result>
+</action>
+
+<action name="AllUsers" class="com.hdu.carrental.action.AdministratorAction" method="getUsersInfo">
+<result name="success">/backstage/user.jsp</result>
+</action>
+
+<action name="DeleteUser" class="com.hdu.carrental.action.AdministratorAction" method="deleteUser">
+<result name="success" type="redirect">/backstage/AllUsers.action</result>
+</action>
+
+<action name="UserInfoEdit" class="com.hdu.carrental.action.AdministratorAction" method="userInfoEdit">
+<result name="success">/backstage/user_edit.jsp</result>
+</action>
+
+<action name="ModifyUserInfo" class="com.hdu.carrental.action.AdministratorAction" method="modifyUserInfo">
+<result name="success" type="redirect">/backstage/AllUsers.action</result>
+</action>
+
+<action name="AllCharges" class="com.hdu.carrental.action.ChargesAction" method="getAllCharges">
+<result name="success">/backstage/Charges.jsp</result>
+</action>
+
+<action name="DeleteCharges" class="com.hdu.carrental.action.ChargesAction" method="deleteCharges">
+<result name="success" type="redirect">/backstage/AllCharges.action</result>
+</action>
+
+<action name="EditCharges" class="com.hdu.carrental.action.ChargesAction" method="getAllCharges">
+<result name="success">/backstage/Charges_edit.jsp</result>
+</action>
+
+<action name="UpdateCharges" class="com.hdu.carrental.action.ChargesAction" method="UpdateCharges">
+<result name="success" type="redirect">/backstage/AllCharges.action</result>
+</action>
+
+<action name="AllCars" class="com.hdu.carrental.action.CarAction" method="getAllCars">
+<result name="success">/backstage/car.jsp</result>
+</action>
+
+<action name="AddCar" class="com.hdu.carrental.action.CarAction" method="addCar">
+<result name="success" type="redirect">/backstage/AllCars.action</result>
+</action>
+
+<action name="CarInfoEdit" class="com.hdu.carrental.action.CarAction" method="carInfoEdit">
+<result name="success">/backstage/car_edit.jsp</result>
+</action>
+
+<action name="ModifyCarInfo" class="com.hdu.carrental.action.CarAction" method="modifyCarInfo">
+<result name="success" type="redirect">/backstage/AllCars.action</result>
+</action>
+
+<action name="DeleteCar" class="com.hdu.carrental.action.CarAction" method="deleteCar">
+<result name="success" type="redirect">/backstage/AllCars.action</result>
+</action>
+
+<action name="AllNews" class="com.hdu.carrental.action.NewsAction" method="getAllNews">
+<result name="success">/backstage/news.jsp</result>
+</action>
+
+<action name="AddNews" class="com.hdu.carrental.action.NewsAction" method="addNews">
+<result name="success" type="redirect">/backstage/AllNews.action</result>
+</action>
+
+<action name="NewsEdit" class="com.hdu.carrental.action.NewsAction" method="newsEdit">
+<result name="success">/backstage/news_edit.jsp</result>
+</action>
+
+<action name="ModifyNews" class="com.hdu.carrental.action.NewsAction" method="modifyNews">
+<result name="success" type="redirect">/backstage/AllNews.action</result>
+</action>
+
+<action name="DeleteNews" class="com.hdu.carrental.action.NewsAction" method="deleteNews">
+<result name="success" type="redirect">/backstage/AllNews.action</result>
+</action>
+
+<action name="AllMessages" class="com.hdu.carrental.action.MessageAction" method="getAllMessages">
+<result name="success">/backstage/message.jsp</result>
+</action>
+
+<action name="DeleteMessage" class="com.hdu.carrental.action.MessageAction" method="deleteMessage">
+<result name="success" type="redirect">/backstage/AllMessages.action</result>
+</action>
+
+<action name="MessageEdit" class="com.hdu.carrental.action.MessageAction" method="messageEdit">
+<result name="success">/backstage/message_edit.jsp</result>
+</action>
+
+<action name="ModifyMessage" class="com.hdu.carrental.action.MessageAction" method="modifyMessage">
+<result name="success" type="redirect">/backstage/AllMessages.action</result>
+</action>
+
+</package>
+</struts>    
